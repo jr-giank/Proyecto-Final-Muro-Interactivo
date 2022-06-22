@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#loginPage{
+    background-color: blue; 
+    height: 100vh;
+    width: 100vw;  
+}
+
+#log-in{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-in form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#log-in form .log-info{
+    display: flex;
+    flex-direction: column;
+}
