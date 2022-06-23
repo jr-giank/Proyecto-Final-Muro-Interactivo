@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+
+/*----------------------------------------General----------------------------------------*/
 *{
     padding: 0;
     margin: 0;
 }
 
 #loginPage{
-    background-color: blue; 
+    font-family: 'Roboto Condensed', sans-serif;
     height: 100vh;
     width: 100vw;  
+    display: flex;
 }
 
+/*----------------------------------------Form-Side----------------------------------------*/
 #log-in{
     width: 50vw;
     height: 100vh;
@@ -20,10 +25,82 @@
 #log-in form{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 46%;
+}
+
+#log-in form h2{
+    font-weight: 600;
+    font-size: 26px;
+}
+
+#log-in form h4{
+    font-weight: 200;
+    font-size: 16px;
 }
 
 #log-in form .log-info{
     display: flex;
     flex-direction: column;
+}
+
+#log-in form .log-info label{
+    font-size: 16px;
+}
+
+#log-in form .log-info #first-one{
+    margin-top: 24px;
+}
+
+#log-in form .log-info input{
+    font-size: 14px;
+    height: 30px;
+    padding: 0px 4px;
+    outline: none;
+    border: 1px solid rgb(188, 184, 184);
+    border-radius: 6px;
+}
+
+#log-in form button{
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#log-in form button:hover{
+    transform: scale(1.02);
+}
+
+#log-in form #sign-in-btn{
+    background-color: #7E56DA;
+    color: #fff;
+}
+
+#log-in form #google-btn{
+    color: black;
+    background-color: #fff;
+    border: 1px solid rgb(188, 184, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-in form #google-btn img{
+    margin-right: 6px;
+}
+
+#log-in form h2,
+#log-in form h4,
+#log-in form .log-info label,
+#log-in form .log-info input,
+#log-in form button{
+    margin: 6px 0px;
+}
+
+/*----------------------------------------Image-Side----------------------------------------*/
+#loginPage #image{
+    background-color: #b2b2b2;
+    background-color: rgba(0, 0, 0, .3);
+    width: 50vw;
+    height: 100vh;
 }
