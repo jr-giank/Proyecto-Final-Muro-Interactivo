@@ -74,6 +74,8 @@
 #log-in form #sign-in-btn{
     background-color: #7E56DA;
     color: #fff;
+    margin-top: 10px;
+    margin-bottom: 6px;
 }
 
 #log-in form #google-btn{
@@ -89,18 +91,57 @@
     margin-right: 6px;
 }
 
+#log-in form p #link-registro{
+    text-decoration: none;
+    color: #7E56DA;
+    font-weight: 400;
+}
+
 #log-in form h2,
 #log-in form h4,
 #log-in form .log-info label,
 #log-in form .log-info input,
-#log-in form button{
+/* #log-in form button, */
+#log-in form p{
     margin: 6px 0px;
 }
 
 /*----------------------------------------Image-Side----------------------------------------*/
 #loginPage #image{
-    background-color: #b2b2b2;
-    background-color: rgba(0, 0, 0, .3);
     width: 50vw;
     height: 100vh;
+}
+
+#loginPage #image #top{
+    background-color: #F3F5F9;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#loginPage #image #bottom{
+    background-color: #F3F5F9;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    filter: blur(8px);
+}
+
+#loginPage #image #top #top-circle{
+    width: 200px;
+    height: 100px;
+    border-top-left-radius: 510px;
+    border-top-right-radius: 510px;
+    background-color: #7E56DA;
+}
+
+#loginPage #image #bottom #bottom-circle{
+    width: 200px;
+    height: 100px;
+    border-bottom-left-radius: 510px;
+    border-bottom-right-radius: 510px;
+    background-color: #7E56DA;
 }
