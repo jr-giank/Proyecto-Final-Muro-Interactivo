@@ -1,0 +1,29 @@
+/*-------------------------------------General-------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*-------------------------------------Page-------------------------------------*/
+#HomePage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+/*-------------------------------------Profile-side-------------------------------------*/
+#HomePage #profile{
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    height: 300px;
+    background-color: aqua;
+}
+
+/*-------------------------------------Posts-side-------------------------------------*/
+#HomePage #posts{
+    width: 75%;
+    margin: 2% 0;
+    /* height: 300px; */
+    background-color: green;
+}

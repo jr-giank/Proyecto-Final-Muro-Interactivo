@@ -1,8 +1,16 @@
 import React from "react";
+import "../styles/Home.css";
 
 export const Home = () => {
 
     return(
-        <h2>Home</h2>
+        <div id="HomePage">
+            <section id="profile">
+                <h2>Profile</h2>
+            </section>
+            <section id="posts">
+                <h2>Posts</h2>
+            </section>
+        </div>
     )
 }
