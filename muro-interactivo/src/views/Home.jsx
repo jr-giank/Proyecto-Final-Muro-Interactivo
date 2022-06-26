@@ -9,7 +9,17 @@ export const Home = () => {
                 <h2>Profile</h2>
             </section>
             <section id="posts">
-                <h2>Posts</h2>
+                <div>
+                    <div id="profile-post">
+                        <p>foto</p>
+                        <p>Nombre Persona</p>
+                    </div>
+                    <div id="post">
+                        {/* <img id="foto_preview" name='foto_preview' src={preview} alt="" /> */}
+                        <p id="foto_preview">Aqui va la foto</p>
+                        <p>textto</p>
+                    </div>
+                </div>
             </section>
         </div>
     )

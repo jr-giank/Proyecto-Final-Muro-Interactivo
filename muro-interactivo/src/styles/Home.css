@@ -27,3 +27,14 @@
     /* height: 300px; */
     background-color: green;
 }
+
+#HomePage #posts #profile-post{
+    display: flex;
+    /* margin-bottom: 10px; */
+    background-color: brown;
+    padding: 10px;
+}
+
+#HomePage #posts #post{
+
+}
