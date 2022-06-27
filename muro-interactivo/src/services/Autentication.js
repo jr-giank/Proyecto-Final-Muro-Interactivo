@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, firestore } from "../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -38,8 +38,20 @@ export const Autentication = () => {
         }
     }
 
-    const loginService = async() => {
+    const loginService = async(loginEmail, loginPassword) => {
+        try{
+            const user = await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            );
+            
+            // const userDocument = await createUserDocument(user.user.uid, details);
 
+            return "success"
+        }catch (error){
+            alert('Error registrando el usuario');
+        }
     }
 
     const logoutService = async() => {
