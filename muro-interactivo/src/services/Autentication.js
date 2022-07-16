@@ -23,7 +23,7 @@ export const Autentication = () => {
             
             const userDocument = await createUserDocument(user.user.uid, details);
 
-            return "success"
+            return user
         }catch (error){
             alert('Error registrando el usuario');
         }
@@ -34,7 +34,7 @@ export const Autentication = () => {
         try{
             const docRef = await setDoc(doc(firestore, "users", user), details);
         }catch (e){
-            alert("Error agregando la información del usuario");
+            alert("Error agregando la información del usuario" + e);
         }
     }
 
@@ -50,7 +50,7 @@ export const Autentication = () => {
 
             return "success"
         }catch (error){
-            alert('Error registrando el usuario');
+            alert('Error logueando al usuario');
         }
     }
 
