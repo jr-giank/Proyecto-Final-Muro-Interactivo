@@ -1,11 +1,8 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth, firestore } from "../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
 
 export const Autentication = () => {
-
-    // const [loginEmail, setLoginEmail] = useState('');
-    // const [loginPassword, setLoginPassword] = useState('');
 
     const registerService = async(email, password, username, name, last_name) => {
         const details = {
@@ -33,8 +30,8 @@ export const Autentication = () => {
 
         try{
             const docRef = await setDoc(doc(firestore, "users", user), details);
-        }catch (e){
-            alert("Error agregando la información del usuario" + e);
+        }catch (error){
+            alert("Error agregando la información del usuario");
         }
     }
 
@@ -46,16 +43,14 @@ export const Autentication = () => {
                 loginPassword
             );
             
-            // const userDocument = await createUserDocument(user.user.uid, details);
-
             return "success"
         }catch (error){
             alert('Error logueando al usuario');
         }
     }
 
-    const logoutService = async() => {
-
+    const logoutService = async(auth) => {
+        await signOut(auth);
     }
 
     return {

@@ -61,9 +61,9 @@ export const Register = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" onChange={(event) => setRegisterPassword(event.target.value)}/>
                 </div>
-                <div >
+                <div className="register-info">
                     <label htmlFor="photo">Profile photo</label>
-                    <input type="file" name="photo" onChange={(event) => setRegisterPhoto(event.target.files[0])}/>
+                    <input id="photo" type="file" name="photo" onChange={(event) => setRegisterPhoto(event.target.files[0])}/>
                 </div>
                 <button id="register-btn">Registrarse</button>
             </form> 

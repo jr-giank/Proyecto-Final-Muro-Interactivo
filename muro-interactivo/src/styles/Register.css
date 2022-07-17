@@ -60,6 +60,10 @@
     border-radius: 6px;
 }
 
+#register-form .register-info #photo{
+    border: none;
+}
+
 #register-form button{
     height: 32px;
     border: none;
