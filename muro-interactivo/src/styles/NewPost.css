@@ -71,11 +71,9 @@
 #newPostPage #preview{
     width: 50%;
     height: 100%;
-    /* background-color: green; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* align-items: center; */
 }
 
 #newPostPage #preview #post-preview{
@@ -100,7 +98,6 @@
 
 #newPostPage #preview #post-preview #foto_preview{
     justify-self: center;
-    /* border: 1.5px dashed black; */
     width: 90%;
     height: 250px;
     object-fit: cover;
