@@ -52,7 +52,7 @@ export const NewPost = () => {
     
     const postInformation = async(e, postCode, name, uid_profile_photo, text, photo) => {
         e.preventDefault();
-        console.log(name)
+        
         const details = {
             name: name,
             uid_profile_photo: uid_profile_photo,
@@ -98,7 +98,7 @@ export const NewPost = () => {
         <div id="newPostPage">
             <section id="form-section">
                 <form onSubmit={(e) => postInformation(e, codeGenerator(), nameUser, user.uid, text, postPhoto)}>
-                    <h2>Make a post</h2>
+                    <h2>Haz un post</h2>
                     <div className="form-info">
                         <label htmlFor="foto">Foto</label>
                         <input name="foto" type="file" onChange={fileSelected}/>

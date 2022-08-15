@@ -64,7 +64,6 @@ export const Home = () => {
                                         if(item._location.path === `profiles/${doc.data().uid_profile_photo}`){
                                             getDownloadURL(item).then((profile_photo) => {
                                                 data.push({...doc.data(), post_photo:post_photo, profile_photo:profile_photo, id:doc.id});
-                                                // console.log(data);
                                                 setPostsDetails(data);
                                             })
                                         }

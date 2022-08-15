@@ -22,7 +22,7 @@ export const Nav = () => {
                     user ? 
                         <h2>Enjoy</h2>
                     :
-                        <button><a href="/register">Registrate</a></button>
+                        <button><a href="/login">Login</a></button>
                 }        
             </nav>
         </div>
