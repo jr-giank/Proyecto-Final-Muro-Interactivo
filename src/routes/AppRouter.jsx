@@ -1,7 +1,7 @@
-import { Home } from "../views/Home";
-import { Login } from "../views/Login";
-import { NewPost } from "../views/NewPost";
-import { Register } from "../views/Register";
+import { Home } from "../componentes/Home";
+import { Login } from "../componentes/Login";
+import { NewPost } from "../componentes/NewPost";
+import { Register } from "../componentes/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export const AppRouter = () => {

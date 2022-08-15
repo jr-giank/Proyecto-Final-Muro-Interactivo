@@ -6,6 +6,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { listAll, ref, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import { Autentication } from "../services/Autentication";
+import { Nav } from "./Nav";
 import "../styles/Home.css";
 
 export const Home = () => {
@@ -35,7 +36,7 @@ export const Home = () => {
                         response.items.forEach((item) => {
                             if(item._location.path === `profiles/${user.uid}`){
                                 getDownloadURL(item).then((photo) => {
-                                    data.push({...doc.data(), photo:photo, id:doc.id})
+                                    data.push({...doc.data(), photo:photo, id:doc.id});
                                     setUserDetails(data);
                                 })
                             }
@@ -63,7 +64,7 @@ export const Home = () => {
                                         if(item._location.path === `profiles/${doc.data().uid_profile_photo}`){
                                             getDownloadURL(item).then((profile_photo) => {
                                                 data.push({...doc.data(), post_photo:post_photo, profile_photo:profile_photo, id:doc.id});
-                                                console.log(data);
+                                                // console.log(data);
                                                 setPostsDetails(data);
                                             })
                                         }
@@ -74,7 +75,6 @@ export const Home = () => {
                     })
                 })
             })
-            // getDetailsProfile();
         } catch (error) {
             console.log(error);
         }
@@ -86,39 +86,58 @@ export const Home = () => {
         });
 
         getDetailsProfile();
-        getDetailsPosts();
-    }, [setUser])
+        getDetailsPosts()
 
-    // getDetailsProfile();
-    // getDetailsPosts();
+    }, [user])
 
     return(        
         user ? 
             <div id="HomePage">      
-                <section id="profile"> 
-                    {
-                        userDetails ? 
+                <Nav/>
+                <div id="Content">
+                    <section id="profile"> 
+                        {
                             userDetails.map((user) => (
                                 <div id="content" key={user.id}>
                                     <img src={user.photo} alt="Photo"/>
                                     <p><strong>{user.name} {user.last_name}</strong></p>
                                     <p>{user.username}</p>
                                 </div>
-                            )) 
-                        : <h1>Holsss</h1>
-                    }
+                            ))
+                        }
+                        
+                        <div id="buttons">
+                            <button id="new_post" onClick={() => {navigate('/new/post')}}>New post</button>
+                            <button id="logout" onClick={() => {handleLogout(auth)}}>Logout</button>
+                        </div>
+                    </section>
                     
-                    <div id="buttons">
-                        <button id="new_post" onClick={() => {navigate('/new/post')}}>New post</button>
-                        <button id="logout" onClick={() => {handleLogout(auth)}}>Logout</button>
-                    </div>
-                </section>
-                
-                <section id="posts">
-                    { 
+                    <section id="posts">
+                        {    
+                            postsDetails.map((post) => (
+                                <div id="post" key={post.id}>
+                                    <div>
+                                        <div id="post_profile">
+                                            <img src={post.profile_photo} alt="Photo"/> <h3>{post.name}</h3>
+                                        </div>
+                                        
+                                        <img id="foto_post" alt="Photo post" src={post.post_photo}/>
+                                        <p>{post.text}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </section>
+                </div>
+            </div>
+        : 
+            <div id="HomePage">
+                <Nav/>
+                <section id="posts-notLogin">
+                    {    
                         postsDetails.map((post) => (
-                            <div id="post">
-                                <div key={post.id}>
+                            <div id="post" key={post.id}>
+                                <div>
                                     <div id="post_profile">
                                         <img src={post.profile_photo} alt="Photo"/> <h3>{post.name}</h3>
                                     </div>
@@ -127,24 +146,8 @@ export const Home = () => {
                                     <p>{post.text}</p>
                                 </div>
                             </div>
-                        ))   
+                        ))
                     }
-                </section>
-            </div>
-        : 
-            <div id="HomePage">
-                <section id="posts">
-                    <div>
-                        <div id="profile-post">
-                            <p>foto</p>
-                            <p>Nombre Persona</p>
-                        </div>
-                        <div id="post">
-                            {/* <img id="foto_preview" name='foto_preview' src={preview} alt="" /> */}
-                            <p id="foto_preview">Aqui va la foto</p>
-                            <p>textto</p>
-                        </div>
-                    </div>
                 </section>
             </div>
     )
