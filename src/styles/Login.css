@@ -78,19 +78,6 @@
     margin-bottom: 6px;
 }
 
-#log-in form #google-btn{
-    color: black;
-    background-color: #fff;
-    border: 1px solid rgb(188, 184, 184);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#log-in form #google-btn img{
-    margin-right: 6px;
-}
-
 #log-in form p #link-registro{
     text-decoration: none;
     color: #7E56DA;

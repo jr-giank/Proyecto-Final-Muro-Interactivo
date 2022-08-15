@@ -54,15 +54,15 @@ export const Register = () => {
                     <input type="email" name="email" onChange={(event) => setRegisterEmail(event.target.value)}/>
                 </div>
                 <div className="register-info">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Usuario</label>
                     <input type="text" name="username" onChange={(event) => setRegisterUsername(event.target.value)}/>
                 </div>
                 <div className="register-info">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Contraseña</label>
                     <input type="password" name="password" onChange={(event) => setRegisterPassword(event.target.value)}/>
                 </div>
                 <div className="register-info">
-                    <label htmlFor="photo">Profile photo</label>
+                    <label htmlFor="photo">Foto</label>
                     <input id="photo" type="file" name="photo" onChange={(event) => setRegisterPhoto(event.target.files[0])}/>
                 </div>
                 <button id="register-btn">Registrarse</button>

@@ -33,11 +33,10 @@ export const Login = () => {
                         <input type="text" name="email" onChange={(event) => setLoginEmail(event.target.value)}/>
                     </div>
                     <div className="log-info">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Contraseña</label>
                         <input type="password" name="password" onChange={(event) => setLoginPassword(event.target.value)}/>
                     </div>
-                    <button id="sign-in-btn">Lon-In</button>
-                    <button id="google-btn"><img alt="Google" src="https://img.icons8.com/color/22/000000/google-logo.png"/>Sign in with Google</button>
+                    <button id="sign-in-btn">Login</button>
                     <p>¿No tienes una cuenta aún?<Link to='/register' id="link-registro"> Registrarse</Link></p>
                 </form>
             </section>
